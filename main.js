@@ -9,14 +9,22 @@ function generateRandomNumber(num) {
     return Math.floor(Math.random() * num)
   }
 
+  const motivationalExtra = [
+    "🌟 Keep shining! 🌟",
+    "💪 You're stronger than you think! 💪",
+    "🚀 Sky's the limit! 🚀",
+    "🌈 Stay positive and bright! 🌈"
+];  
+
 // Function to generate a random motivational message
 function generateRandomMessage() {
     const randomIntroIndex = generateRandomNumber(intro.length);
     const randomSubjectIndex = generateRandomNumber(subjects.length);
     const randomVerbIndex = generateRandomNumber(verbs.length);
     const randomObjectIndex = generateRandomNumber(objects.length);
+    const motivationalExtraIndex = generateRandomNumber(motivationalExtra.length);
 
-    const randomMessage = `${intro[randomIntroIndex]}, ${subjects[randomSubjectIndex]}! You ${verbs[randomVerbIndex]} ${objects[randomObjectIndex]}.`;
+    const randomMessage = `${intro[randomIntroIndex]}, ${subjects[randomSubjectIndex]}! You ${verbs[randomVerbIndex]} ${objects[randomObjectIndex]}.\n${motivationalExtra[motivationalExtraIndex]}`;
 
     return randomMessage;
 }
